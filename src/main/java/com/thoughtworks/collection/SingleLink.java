@@ -1,5 +1,8 @@
 package com.thoughtworks.collection;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public interface SingleLink<T> {
     public T getHeaderData();
     public T getTailData();
