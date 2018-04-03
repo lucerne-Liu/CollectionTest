@@ -80,11 +80,12 @@ public class Reduce {
     //实现接口SingleLink，然后再此函数内使用
     public Double getMedianInLinkList(SingleLink<Integer> singleLink) {
         //获取单链表中的中位数
-        singleLink = new Link<Integer>();
         for (Integer sum : arrayList) {
             singleLink.addTailPointer(sum);
         }
+        singleLink = new Link<Integer>(arrayList);
         int len = singleLink.size();
+//        return (singleLink.getNode(6) + singleLink.getNode(7)) / (double)2;
         return len % 2 == 0 ? (singleLink.getNode(len / 2) + singleLink.getNode(len / 2 + 1)) / (double)2 : singleLink.getNode((len - 1) / 2 + 1) / (double)1;
 //        throw new NotImplementedException();
     }

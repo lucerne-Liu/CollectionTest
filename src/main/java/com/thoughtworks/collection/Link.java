@@ -7,7 +7,7 @@ public class Link<T> implements SingleLink<T> {
     List<T> arrayList;
 
     public Link(List<T> arrayList) {
-        this.arrayList =  new ArrayList<>(arrayList);
+        this.arrayList =  new ArrayList<T>(arrayList);
     }
     public Link() {
         this.arrayList =  new ArrayList<>();
@@ -29,7 +29,7 @@ public class Link<T> implements SingleLink<T> {
 
     @Override
     public boolean isEmpty() {
-        return arrayList.size() > 0 ? false : true;
+        return arrayList.size() <= 0;
     }
 
     @Override
