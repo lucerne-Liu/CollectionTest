@@ -1,13 +1,8 @@
 package com.thoughtworks.collection;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 public class Reduce {
 
@@ -83,11 +78,9 @@ public class Reduce {
         for (Integer sum : arrayList) {
             singleLink.addTailPointer(sum);
         }
-        singleLink = new Link<Integer>(arrayList);
         int len = singleLink.size();
 //        return (singleLink.getNode(6) + singleLink.getNode(7)) / (double)2;
         return len % 2 == 0 ? (singleLink.getNode(len / 2) + singleLink.getNode(len / 2 + 1)) / (double)2 : singleLink.getNode((len - 1) / 2 + 1) / (double)1;
-//        throw new NotImplementedException();
     }
 
     public int getLastOdd() {
@@ -112,15 +105,5 @@ public class Reduce {
         }
         return arrayList.indexOf(odd);
 //        throw new NotImplementedException();
-    }
-
-    public static void main(String[] args) {
-        Integer[] array = new Integer[]{1, 4, 6, 2, 3, 10, 9, 8, 11, 2, 19, 30};
-        List<Integer> arrayList = Arrays.asList(array);
-
-        Link<Integer> singleLink = new Link<Integer>(arrayList);
-        Reduce reduce = new Reduce(arrayList);
-
-        reduce.getMedianInLinkList(singleLink);
     }
 }

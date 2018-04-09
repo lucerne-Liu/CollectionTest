@@ -1,6 +1,7 @@
 package com.thoughtworks.collection;
 
 import org.junit.Test;
+import org.junit.runners.parameterized.BlockJUnit4ClassRunnerWithParameters;
 
 import java.util.Arrays;
 import java.util.List;
@@ -66,9 +67,12 @@ public class ReduceTest {
         Integer[] array = new Integer[]{1, 4, 6, 2, 3, 10, 9, 8, 11, 2, 19, 30};
         List<Integer> arrayList = Arrays.asList(array);
 
-        SingleLink<Integer> singleLink = mock(SingleLink.class);
-        when(singleLink.getNode(6)).thenReturn(10);
-        when(singleLink.getNode(7)).thenReturn(9);
+//        SingleLink<Integer> singleLink = mock(SingleLink.class);
+        SingleLink<Integer> singleLink = spy(Node.class);
+        doReturn(10).when(singleLink).getNode(6);
+        doReturn(9).when(singleLink).getNode(7);
+//        when(singleLink.getNode(6)).thenReturn(10);
+//        when(singleLink.getNode(7)).thenReturn(9);
 
         Reduce reduce = new Reduce(arrayList);
 
