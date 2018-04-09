@@ -19,10 +19,11 @@ public class InverseReduce {
     public List<Integer> divideToSmaller(int number) {
         //根据给定数字无限分割至等于0(提示：9-2=7,7-2=5 ...)
         List<Integer> resultList = new ArrayList<>();
-        if (number < 2){
+        int divideNum = random.nextInt(3);
+        if (number < divideNum){
             return resultList;
         }
-        for (int i = number - 2; i > 0; i -= 2) {
+        for (int i = number - divideNum; i >= 0; i -= divideNum) {
             resultList.add(i);
         }
         return resultList;
